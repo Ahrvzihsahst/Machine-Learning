@@ -101,6 +101,50 @@ model = Pipeline(steps=[
 model.fit(X_train, y_train)
 predictions = model.predict(X_test)
 ```
+
+### Example 2: Applying Different Transformers Sequentially
+```python
+from sklearn.compose import ColumnTransformer
+from sklearn.pipeline import Pipeline
+from sklearn.impute import SimpleImputer
+from sklearn.preprocessing import StandardScaler, OneHotEncoder
+from sklearn.ensemble import RandomForestClassifier
+
+# Assuming 'numerical_features' and 'categorical_features' are lists of column names
+numerical_features = ['numerical_feature_1', 'numerical_feature_2']
+categorical_features = ['categorical_feature_1', 'categorical_feature_2']
+
+# Creating transformers for numerical and categorical features
+numeric_transformer = Pipeline(steps=[
+    ('imputer', SimpleImputer(strategy='median')),
+    ('scaler', StandardScaler())
+])
+
+categorical_transformer = Pipeline(steps=[
+    ('imputer', SimpleImputer(strategy='most_frequent')),
+    ('onehot', OneHotEncoder(handle_unknown='ignore'))
+])
+
+# Creating a ColumnTransformer with sequential processing
+preprocessor = ColumnTransformer(
+    transformers=[
+        ('num', numeric_transformer, numerical_features),
+        ('cat', categorical_transformer, categorical_features)
+    ], 
+    remainder='passthrough'  # Allows passing through any remaining features
+
+)
+
+# Creating a pipeline with the ColumnTransformer and a classifier (e.g., RandomForestClassifier)
+model = Pipeline(steps=[
+    ('preprocessor', preprocessor),
+    ('classifier', RandomForestClassifier())
+])
+
+# Fit and predict using the pipeline
+model.fit(X_train, y_train)
+predictions = model.predict(X_test)
+```
 These examples demonstrate how to use `ColumnTransformer` to apply different preprocessing techniques to various subsets of features in your dataset. Adjust the transformers and their parameters based on your specific preprocessing needs.
 
 ### Conclusion:
