@@ -2,34 +2,58 @@
 In an Agile-driven machine learning project hosted on GitHub, the file structure should be organized to support collaboration, version control, and seamless integration into the Agile development lifecycle. Below is a suggested file structure:
 
 ```
-project-root/
+my_ml_project/
 │
 ├── data/
-│   ├── raw/                   # Raw data files
-│   ├── processed/             # Processed data files
-│   └── interim/               # Intermediate data files
+│   ├── raw/
+│   │   ├── raw_data.csv
+│   │   └── ...
+│   ├── processed/
+│   │   ├── train_data.csv
+│   │   ├── test_data.csv
+│   │   └── ...
+│   └── external/
+│       ├── external_data_1.csv
+│       └── ...
 │
-├── notebooks/                 # Jupyter notebooks for exploration and analysis
+├── notebooks/
+│   ├── exploratory_data_analysis.ipynb
+│   ├── data_preprocessing.ipynb
+│   ├── feature_engineering.ipynb
+│   └── ...
 │
 ├── src/
-│   ├── data_preprocessing/    # Scripts for data preprocessing
-│   ├── feature_engineering/   # Scripts for feature engineering
-│   ├── model_training/        # Scripts for training machine learning models
-│   └── evaluation/            # Scripts for model evaluation and validation
+│   ├── __init__.py
+│   ├── data/
+│   │   ├── __init__.py
+│   │   ├── data_loader.py
+│   │   └── data_preprocessing.py
+│   ├── models/
+│   │   ├── __init__.py
+│   │   ├── model_trainer.py
+│   │   ├── model_predictor.py
+│   │   └── ...
+│   ├── utils/
+│   │   ├── __init__.py
+│   │   ├── helper_functions.py
+│   │   └── ...
+│   └── main.py
 │
-├── models/                    # Saved model files
+├── tests/
+│   ├── test_data_loader.py
+│   ├── test_model_trainer.py
+│   └── ...
 │
-├── docs/                      # Documentation files
-│   ├── requirements.txt       # Project dependencies
-│   └── README.md              # Project README
+├── config/
+│   ├── config.yaml
+│   └── ...
 │
-├── tests/                     # Unit tests
-│
-├── .gitignore                 # Gitignore file
-├── LICENSE                    # Project license file
-└── .github/
-    ├── workflows/             # GitHub Actions workflows for CI/CD
-    └── pull_request_template/ # Pull request templates
+├── requirements.txt
+├── README.md
+├── .gitignore
+├── LICENSE
+└── Dockerfile
+
 ```
 
 Explanation:
