@@ -1,3 +1,11 @@
+---
+Title: Statistics for Data Science
+Author: Biswajit Jena
+Date: January 28, 2024
+Copyright: © 2024 Biswa. All rights reserved.
+License: This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.
+---
+
 # Descriptive Statistics
 
    - **Mean, Median, Mode:** Measures of central tendency.
@@ -247,7 +255,7 @@ Where:
 
 Standard deviation is a crucial measure in statistics, offering a standardized way to express the dispersion of data points from the mean. Its calculation involves assessing the squared differences between individual data points and their mean, providing valuable insights into the variability of datasets. Understanding standard deviation is essential for assessing risk, making predictions, and drawing meaningful conclusions from data analysis.
 
-## Range (Statistical Measur)
+## Range (Statistical Measure)
 
 ### Definition:
 
