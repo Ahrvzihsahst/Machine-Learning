@@ -1,3 +1,12 @@
+---
+Title: Fundamentals of Mathematics Notes
+Author: Biswajit Jena
+Date: January 27, 2024
+Copyright: © 2024 Biswa. All rights reserved.
+License: This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.
+---
+
+
 #                                    **Linear Algebra**
 
 ## **Introduction:**
