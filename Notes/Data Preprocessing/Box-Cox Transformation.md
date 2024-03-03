@@ -4,22 +4,6 @@ The Box-Cox transformation is a statistical technique used to stabilize the vari
 
 The transformation is defined by the formula:
 
-{ 
-λ
-y 
-λ
- −1
-​
- ,
-log(y),
-​
-  
-if λ
-
-=0
-if λ=0
-​
-
 \[ y(\lambda) =
 \begin{cases} 
 \frac{{y^\lambda - 1}}{{\lambda}}, & \text{if } \lambda \neq 0 \\
